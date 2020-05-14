@@ -5,3 +5,8 @@ export const fetchMovieList = () => async (dispatch) => {
 
   dispatch({ type: "FETCH_MOVIELIST", payload: response.data.data.movies });
 };
+
+export const fetchCategoryDrama = () => async (dispatch) => {
+  const response = await JsonMovies.get("list_movies.json?genre=drama");
+  dispatch({ type: "FETCH_CATEGORY", payload: response.data.data.movies });
+};

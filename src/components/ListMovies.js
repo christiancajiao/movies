@@ -11,9 +11,9 @@ class movieList extends React.Component {
     return this.props.movies.map((movie) => {
       return (
         <div>
-          <img src={movie.medium_cover_image} />
-          <h1>{movie.title}</h1>
-          <p>{movie.description_full}</p>
+          <h2 className="movie_title">{movie.title}</h2>
+          <p className="movie_description">{movie.description_full}</p>
+          <img src={movie.medium_cover_image} className="cover_image" />
         </div>
       );
     });

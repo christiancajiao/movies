@@ -1,16 +1,11 @@
 import React from "react";
 import ListMovies from "./ListMovies";
+import SearchBar from "./SearchBar";
 
 const App = () => {
   return (
     <div>
-      <div className="contenedor_searchBar">
-        <form>
-          <input type="search" />
-          <input type="submit" />
-        </form>
-      </div>
-
+      <SearchBar />
       <ListMovies />
     </div>
   );
