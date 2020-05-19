@@ -1,11 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchMovieList, fetchCategoryDrama } from "../actions";
 
 class CategorySelector extends React.Component {
-  componentWillMount() {
-    this.props.fetchCategoryDrama();
-  }
+  componentWillMount() {}
 
   render() {
     return (
@@ -33,4 +30,4 @@ class CategorySelector extends React.Component {
 const mapStateToProps = (state) => {
   return { movie: this.props.movies };
 };
-export default connect(null, { fetchCategoryDrama })(CategorySelector);
+export default connect(null)(CategorySelector);

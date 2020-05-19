@@ -2,32 +2,32 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchMovieList } from "../actions";
 import CategorySelector from "./CategorySelector";
+import { fetchMovie, searchMovie } from "../actions/searchAction";
 
 class SearchBar extends React.Component {
   componentWillMount() {}
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: "",
-      results: {},
-    };
-  }
   handleOnInputChange = (event) => {
+    this.props.searchMovie(event.target.value);
     const query = event.target.value;
     console.log(query);
+  };
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.fetchMovie(this.props.text);
   };
 
   mapDispatchToProps;
   render() {
     return (
       <div className="contenedor_searchBar">
-        <form className="form_search">
+        <form className="form_search" onSubmit={this.onSubmit}>
           <input
             type="search"
             className="inputField"
             field="select"
             onChange={this.handleOnInputChange}
+            onSubmit={this.onSubmit}
           />
           <input type="submit" className="Submit" />
         </form>
@@ -38,6 +38,10 @@ class SearchBar extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { movie: this.props.movies };
+  return { text: state.movies.text };
 };
-export default connect(null, { fetchMovieList })(SearchBar);
+export default connect(mapStateToProps, {
+  fetchMovie,
+  fetchMovieList,
+  searchMovie,
+})(SearchBar);

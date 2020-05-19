@@ -25,6 +25,6 @@ class movieList extends React.Component {
 }
 
 const mapStatetoProps = (state) => {
-  return { movies: state.movies };
+  return { movies: state.Listofmovies };
 };
 export default connect(mapStatetoProps, { fetchMovieList })(movieList);
