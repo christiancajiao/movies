@@ -1,10 +1,5 @@
 import { SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIELIST } from "../actions/types";
-
-const inicialState = {
-  text: "",
-  movies: [],
-  movie: [],
-};
+import { inicialState } from "./initialState";
 
 export default function (state = inicialState, action) {
   switch (action.type) {
