@@ -1,11 +1,9 @@
-import { inicialState } from "./initialState";
+import { UPDATE_MOVIES } from "../actions/types";
 
-export default (state = inicialState, action) => {
+export default (state = [], action) => {
   switch (action.type) {
-    case "FETCH_MOVIELIST":
-      return {
-        movies: action.payload,
-      };
+    case UPDATE_MOVIES:
+      return action.payload;
     default:
       return state;
   }

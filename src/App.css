@@ -37,15 +37,21 @@ body {
   opacity: 1%;
 
   position: absolute;
+
   background-color: cornsilk;
   height: 390px;
   width: 250px;
   border-radius: 35px;
+
+  align-items: center;
+  align-content: center;
 }
+
 .movie_description:hover {
   opacity: 80%;
   padding-top: 15px;
   padding-left: 5px;
+
   position: absolute;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -54,6 +60,18 @@ body {
   width: 250px;
   border-radius: 35px;
   overflow: hidden;
+  align-items: center;
+  align-content: center;
+}
+
+.movie_paragraph {
+  height: 300px;
+  width: 250px;
+  overflow: hidden;
+}
+.ver_pelicula {
+  background-color: red;
+  color: aliceblue;
 }
 .cover_image {
   background-color: cornsilk;
@@ -71,4 +89,35 @@ body {
 .category_selector {
   width: 80px;
   height: auto;
+}
+.pelicula_seleccionada {
+  height: 300px;
+  width: 300px;
+}
+.container_movie {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 500px 500px;
+}
+.movie_tittle {
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.movie_cover {
+}
+.container_youtube {
+}
+.movie_rating {
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.movie_fulldescription {
+  padding-top: 15%;
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

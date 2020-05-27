@@ -38,7 +38,7 @@ class SearchBar extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { text: state.movies.text };
+  return { text: state.text };
 };
 export default connect(mapStateToProps, {
   fetchMovie,

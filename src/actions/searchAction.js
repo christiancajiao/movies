@@ -1,5 +1,5 @@
 import JsonMovies from "../apis/JsonMovies";
-import { SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIELIST } from "./types";
+import { SEARCH_MOVIE, UPDATE_MOVIES, FETCH_MOVIELIST } from "./types";
 import axios from "axios";
 
 //export const fetchMovie = (text) => async (dispatch) => {
@@ -11,7 +11,7 @@ export const fetchHomeList = () => (dispatch) => {
     .get(`https://yts.mx/api/v2/list_movies.json`)
     .then((response) =>
       dispatch({
-        type: FETCH_MOVIELIST,
+        type: UPDATE_MOVIES,
         payload: response.data.data.movies,
       })
     )
@@ -30,7 +30,7 @@ export const fetchMovie = (text) => (dispatch) => {
     .get(`https://yts.mx/api/v2/list_movies.json?query_term=${text}`)
     .then((response) =>
       dispatch({
-        type: FETCH_MOVIES,
+        type: UPDATE_MOVIES,
         payload: response.data.data.movies,
       })
     )

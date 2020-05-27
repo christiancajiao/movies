@@ -1,12 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
+import { fetchCategory } from "../actions/CategorySelector";
 
 class CategorySelector extends React.Component {
   componentWillMount() {}
 
+  handleOnInputChange = (event) => {
+    this.props.fetchCategory(event.target.value);
+    const query = event.target.value;
+    console.log(query);
+  };
   render() {
     return (
-      <select id="Category" className="category_selector">
+      <select
+        id="Category"
+        className="category_selector"
+        onChange={this.handleOnInputChange}
+      >
         <option value=""></option>
         <option value="Action">Action</option>
         <option value="Drama">Drama</option>
@@ -30,4 +40,4 @@ class CategorySelector extends React.Component {
 const mapStateToProps = (state) => {
   return { movie: this.props.movies };
 };
-export default connect(null)(CategorySelector);
+export default connect(null, { fetchCategory })(CategorySelector);
