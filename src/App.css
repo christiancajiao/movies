@@ -95,10 +95,13 @@ body {
   width: 300px;
 }
 .container_movie {
+  margin-left: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 500px 500px;
 }
 .movie_tittle {
   color: black;
@@ -108,6 +111,11 @@ body {
 .movie_cover {
 }
 .container_youtube {
+  grid-column: 1;
+  grid-row: 9 / 9;
+  align-items: center;
+  align-content: center;
+  display: grid;
 }
 .movie_rating {
   color: black;
@@ -120,4 +128,46 @@ body {
   color: black;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.movie_backgroundimage {
+  width: 650px;
+}
+.container_tittle {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+.container_description {
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+}
+.container_images {
+  margin-bottom: 80px;
+  grid-column: 3;
+  grid-row: 6 / 6;
+}
+.download {
+  margin: 15px;
+  width: 200px;
+  height: 100px;
+  background-color: rgb(25, 83, 190);
+  font-size: larger;
+  color: aliceblue;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border: none;
+}
+.download_torrent {
+  margin: 15px;
+  width: 200px;
+  height: 100px;
+  background-color: rgb(25, 190, 25);
+  font-size: larger;
+  color: aliceblue;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border: none;
+}
+.logo_imbd {
+  width: 60px;
+  height: 30px;
 }

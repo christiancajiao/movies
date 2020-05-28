@@ -5,6 +5,9 @@ import MovieSelected from "./MovieSelected";
 import { connect } from "react-redux";
 
 class App extends React.Component {
+  onClick() {
+    return window.location.reload(false);
+  }
   render() {
     if (!this.props.singleMovie) {
       return (
@@ -17,6 +20,7 @@ class App extends React.Component {
     }
     return (
       <div>
+        <button onClick={this.onClick}>BACK</button>
         <MovieSelected />
       </div>
     );

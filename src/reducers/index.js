@@ -9,5 +9,3 @@ export default combineReducers({
   text: SearchReducer,
   movie: MovieSelectedReducer,
 });
-
-export default connect(mapStatetoProps, { movieSelected })(MovieSelected);
