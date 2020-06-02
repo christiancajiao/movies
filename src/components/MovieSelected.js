@@ -19,6 +19,7 @@ class MovieSelected extends React.Component {
   downloadTorrent() {
     return "https://www.utorrent.com/intl/es/downloads/complete/track/stable/os/win";
   }
+
   rederMovie() {
     return (
       <div className="container_movie">

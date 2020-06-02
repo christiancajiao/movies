@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
     if (!this.props.singleMovie) {
       return (
-        <div>
+        <div className="container_ofcontainers">
           <SearchBar />
 
           <ListMovies />
@@ -19,8 +19,10 @@ class App extends React.Component {
       );
     }
     return (
-      <div>
-        <button onClick={this.onClick}>BACK</button>
+      <div className="conteiner_singleMovie">
+        <button className="back_button" onClick={this.onClick}>
+          BACK
+        </button>
         <MovieSelected />
       </div>
     );

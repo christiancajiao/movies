@@ -2,14 +2,34 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchMovieList } from "../actions";
 import { movieSelected } from "../actions/MovieSelected";
+import { nextPage } from "../actions/NextPage";
+import { fetchList } from "../actions/FetchList";
+
+let counterofpages = 1;
+let loadNextPage = false;
 
 class movieList extends React.Component {
   componentDidMount() {
     this.props.fetchMovieList();
+    this.props.fetchList(counterofpages);
   }
 
   onClick = (e) => {
     this.props.movieSelected(e.target.id);
+  };
+
+  nexpageSum = () => {
+    counterofpages = counterofpages + 1;
+  };
+
+  loadNextPage = (e) => {
+    let direccionurl = this.props.url;
+    if (direccionurl.includes("?")) {
+      console.log("tiene ?");
+    }
+    this.nexpageSum();
+    this.props.nextPage(counterofpages, direccionurl);
+    console.log(direccionurl);
   };
 
   rederListMovies() {
@@ -36,13 +56,23 @@ class movieList extends React.Component {
     });
   }
   render() {
-    return <div className="contenedor_imagenes">{this.rederListMovies()}</div>;
+    return (
+      <div className="conteiner_ofconteiners">
+        <div className="contenedor_imagenes">{this.rederListMovies()}</div>
+        <button className="more_results" onClick={this.loadNextPage}>
+          More Results...
+        </button>
+      </div>
+    );
   }
 }
 
 const mapStatetoProps = (state) => {
-  return { movies: state.movies };
+  return { movies: state.movies, url: state.url };
 };
-export default connect(mapStatetoProps, { fetchMovieList, movieSelected })(
-  movieList
-);
+export default connect(mapStatetoProps, {
+  fetchMovieList,
+  movieSelected,
+  nextPage,
+  fetchList,
+})(movieList);

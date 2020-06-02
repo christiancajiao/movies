@@ -1,12 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchCategory } from "../actions/CategorySelector";
+import { categoryFetchList } from "../actions/CategoryFetchList";
 
 class CategorySelector extends React.Component {
   componentWillMount() {}
 
   handleOnInputChange = (event) => {
     this.props.fetchCategory(event.target.value);
+    this.props.categoryFetchList(event.target.value);
     const query = event.target.value;
     console.log(query);
   };
@@ -16,6 +18,7 @@ class CategorySelector extends React.Component {
         id="Category"
         className="category_selector"
         onChange={this.handleOnInputChange}
+        value="Category Selector"
       >
         <option value=""></option>
         <option value="Action">Action</option>
@@ -29,9 +32,6 @@ class CategorySelector extends React.Component {
         <option value="Animation">Animation</option>
         <option value="Adventure">Adventure</option>
         <option value="Fantasy">Fantasy</option>
-        <option value="Comedy-Romance">Comedy-Romance</option>
-        <option value="Action-Comedy">Action-Comedy</option>
-        <option value="Superhero">Superhero</option>
       </select>
     );
   }
@@ -40,4 +40,6 @@ class CategorySelector extends React.Component {
 const mapStateToProps = (state) => {
   return { movie: this.props.movies };
 };
-export default connect(null, { fetchCategory })(CategorySelector);
+export default connect(null, { fetchCategory, categoryFetchList })(
+  CategorySelector
+);

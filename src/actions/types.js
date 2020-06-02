@@ -5,3 +5,4 @@ export const CATEGORY_SELECT = "CATEGORY_SELECT";
 export const UPDATE_MOVIES = "UPDATE_MOVIES";
 export const PAGE_NEXT = "PAGE_NEXT";
 export const MOVIE_SELECTED = "MOVIE_SELECTED";
+export const FETCH_LIST = "FETCH_LIST";
